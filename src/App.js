@@ -1,7 +1,7 @@
 import React from 'react'
 import 'antd/dist/antd.css'
 import './App.css'
-import { Radio, Input, Space } from 'antd'
+import { Radio, Space } from 'antd'
 import GenerateStrArray from './GenerateStrArray.js'
 import LetterMatcher from './LetterMatcher/index.js'
 
