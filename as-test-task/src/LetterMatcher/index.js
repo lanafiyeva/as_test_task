@@ -3,9 +3,7 @@ import { list } from './list.js'
 
 class LetterMatcher extends React.Component {
   render() {
-    console.log(list)
     const FilteredList = list.filter((e) => e.name[0] === this.props.value)
-    console.log(FilteredList)
     return (
       <div>
         {FilteredList.length ? (

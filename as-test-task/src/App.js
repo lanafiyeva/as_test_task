@@ -19,7 +19,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log('test', this.state.strArray)
     const { value } = this.state
     return (
       <div>
