@@ -1,9 +1,11 @@
 import React from 'react'
 import 'antd/dist/antd.css'
 import './App.css'
-import { Radio, Space } from 'antd'
+import { Select } from 'antd'
 import GenerateStrArray from './GenerateStrArray.js'
 import LetterMatcher from './LetterMatcher/index.js'
+
+const { Option } = Select
 
 class App extends React.Component {
   state = {
@@ -11,10 +13,9 @@ class App extends React.Component {
     strArray: GenerateStrArray(),
   }
 
-  onChange = (e) => {
-    console.log('radio checked', e.target.value)
+  onChange = (value) => {
     this.setState({
-      value: e.target.value,
+      value: value,
     })
   }
 
@@ -22,15 +23,13 @@ class App extends React.Component {
     const { value } = this.state
     return (
       <div>
-        <Radio.Group onChange={this.onChange} value={value}>
-          <Space direction="vertical">
-            {this.state.strArray.map((item, index) => (
-              <Radio value={item} key={index}>
-                {item}
-              </Radio>
-            ))}
-          </Space>
-        </Radio.Group>
+        <Select onChange={this.onChange} value={value} style={{ width: 120 }}>
+          {this.state.strArray.map((item, index) => (
+            <Option value={item} key={index}>
+              {item}
+            </Option>
+          ))}
+        </Select>
 
         <LetterMatcher value={this.state.value} />
       </div>
